@@ -1,6 +1,5 @@
 import os
 import negocio
-from dados import salvar_nova_conta
 
 def menu_inicial():
     while True:
@@ -32,10 +31,7 @@ def menu_principal(usuario_logado):
         
         if opcao == '1':
             valor_atual = negocio.saldo(usuario_logado)
-            if valor_atual is not None:
-                print(f"Seu saldo atual é: R$ {valor_atual:.2f}")
-            else:
-                print("Erro: Conta não encontrada.")
+            print(f"Seu saldo atual é: R$ {valor_atual:.2f}")
             
         elif opcao == '2':
             try:
