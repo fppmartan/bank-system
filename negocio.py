@@ -1,10 +1,14 @@
 import dados
 
-valorAtual = 0
-
-def deposito(valor):
+def deposito(nome, valor):
     if valor > 0:
-        valorAtual += atualizar_saldo(valor)
+        saldo_atual = dados.atualizar_saldo(valor)
+
+        if saldo_atual is not None:
+            novo_saldo = saldo_atual + valor
+            dados.atualizar_saldo(nome, novo_saldo)
+        else:
+            print("Conta não encontrada.")
     else:
         print("Valor de deposito inválido.")
     
