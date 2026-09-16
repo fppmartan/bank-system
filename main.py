@@ -24,17 +24,18 @@ def menu_principal(usuario_logado):
         print("1. Consultar Saldo")
         print("2. Depositar")
         print("3. Sacar")
-        print("4. Transferir")
-        print("5. Sair")
+        print("4. Sair")
         
         opcao = input("Escolha uma opção: ")
         
         if opcao == '1':
+            os.system("cls" if os.name == "nt" else "clear")
             valor_atual = negocio.saldo(usuario_logado)
             print(f"Seu saldo atual é: R$ {valor_atual:.2f}")
             
         elif opcao == '2':
             try:
+                os.system("cls" if os.name == "nt" else "clear")
                 valor = float(input("Digite o valor do depósito: R$ "))
                 negocio.deposito(usuario_logado, valor)
                 print("Operação finalizada.")
@@ -43,6 +44,7 @@ def menu_principal(usuario_logado):
                 
         elif opcao == '3':
             try:
+                os.system("cls" if os.name == "nt" else "clear")
                 valor = float(input("Digite o valor do saque: R$ "))
                 negocio.saque(usuario_logado, valor)
                 print("Operação finalizada.")
@@ -50,20 +52,15 @@ def menu_principal(usuario_logado):
                 print("Erro: Por favor, insira um valor numérico válido.")
                 
         elif opcao == '4':
-            destino = input("Digite o nome do usuário de destino: ")
-            try:
-                valor = float(input("Digite o valor da transferência: R$ "))
-                negocio.transferencia(usuario_logado, destino, valor)
-                print("Operação finalizada.")
-            except ValueError:
-                print("Erro: Por favor, insira um valor numérico válido.")
-                
-        elif opcao == '5':
+            os.system("cls" if os.name == "nt" else "clear")
             print("Encerrando o sistema.")
             break
             
         else:
             print("Opção inválida! Tente novamente.")
+            
+        input("\nPressione Enter para voltar ao menu principal...")
+        os.system("cls" if os.name == "nt" else "clear")
 
 if __name__ == "__main__":
     # Limpa a tela
