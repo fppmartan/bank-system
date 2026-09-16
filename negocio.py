@@ -1,5 +1,9 @@
 import dados
 
+def salvar_conta(nome):
+    dados.salvar_nova_conta(nome)
+
+
 def deposito(nome_origem, valor):
     if valor > 0:
         saldo_atual = dados.atualizar_saldo(valor)
