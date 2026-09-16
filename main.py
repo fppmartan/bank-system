@@ -10,7 +10,7 @@ def menu_inicial():
         
         # Verifica se o usuário digitou algum texto
         if user != "":
-            salvar_nova_conta(user)
+            negocio.salvar_conta(user)
             print(f"Usuário '{user}' cadastrado com sucesso!")
             return user
                 
