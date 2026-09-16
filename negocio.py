@@ -12,8 +12,8 @@ def deposito(nome, valor):
     else:
         print("Valor de deposito inválido.")
     
-def saldo():
-    return buscar_conta(nome)
+def saldo(nome):
+    return dados.buscar_conta(nome)
 
 def saque(valor):
     if valor > 0:
