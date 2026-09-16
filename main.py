@@ -18,7 +18,7 @@ def menu_inicial():
     
 def menu_principal(usuario_logado):
     # Menu interativo principal para realizar as transações bancárias.
-    os.system("cls") 
+    os.system("cls" if os.name == "nt" else "clear") 
     while True:
         print(f"\n> Bank • User: {usuario_logado}")
         print("1. Consultar Saldo")
@@ -53,7 +53,7 @@ def menu_principal(usuario_logado):
             destino = input("Digite o nome do usuário de destino: ")
             try:
                 valor = float(input("Digite o valor da transferência: R$ "))
-                negocio.transferência(usuario_logado, destino, valor)
+                negocio.transferencia(usuario_logado, destino, valor)
                 print("Operação finalizada.")
             except ValueError:
                 print("Erro: Por favor, insira um valor numérico válido.")
@@ -67,7 +67,7 @@ def menu_principal(usuario_logado):
 
 if __name__ == "__main__":
     # Limpa a tela
-    os.system("cls") 
+    os.system("cls" if os.name == "nt" else "clear") 
     # Inicia a aplicação chamando o menu inicial
     usuario = menu_inicial()
     # Passa o nome do usuário validado para o menu principal
