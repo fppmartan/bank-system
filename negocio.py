@@ -36,7 +36,7 @@ def transferencia(nome_origem, nome_destino, valor):
         saldo_origem = dados.buscar_conta(nome_origem)
         saldo_destino = dados.buscar_conta(nome_destino)
 
-        if saldo_atual is None:
+        if saldo_origem is None:
             print("Conta de origem não encontrada.")
 
         elif saldo_destino is None:
